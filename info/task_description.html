@@ -1,0 +1,67 @@
+<p>
+Many war games have rules on supply lines.
+Units that can not contact the supply source fall into various troubles.
+</p>
+<p>
+You should find the shortest supply line with Python.
+</p>
+
+<p>
+The map used in this mission is a hex grid with a maximum size of 12x9, and each hex is numbered from A1 to L9.
+(A - L is a column, and 1 - 9 is a row.)
+</p>
+<div>
+    <p style="text-align: left;">
+        <img  title="The map" src="{{MEDIA}}checkio_supply_line_hex_grid.png" alt="The map" style="max-height: 250px"/>
+    </p>
+</div>
+
+<p>
+You are given three arguments, the first is the position of your uint (a string), the second is the supply depots (set of string), the third is the enemy units (set of string).
+You should return the minimum steps from your unit to the supply depot.
+If you can not set a supply line at all, return None.
+</p>
+<p>The effect of enemy hex and its adjacent hexes:</p>
+<ul>
+    <li>You can not pass supply lines these hexes.</li>
+    <ul>
+        <li>If your unit is adjacent to the enemy, there is no problem with the supply line.</li>
+    </ul>
+    <li>The supply depot in these hexes can not be used .</li>
+
+</ul>
+
+
+
+<div class="for_info_only">
+    <p><strong>Example:</strong></p>
+    <pre class="brush: python">
+supply_line('B4', {'F4'}, {'D4'}) == 6
+supply_line('A3', {'A9', 'F5', 'G8'}, {'B3', 'G6'}) == 11</pre>
+</div>
+
+<div>
+    <p style="text-align: left;">
+        <img  title="The map" src="{{MEDIA}}checkio_supply_line_ex_01.png" alt="examples" style="max-height: 250px"/>
+    </p>
+</div>
+<p><strong>Input: </strong>Three arguments. The first one is the position of your uint as a string, the second one is the supply depots as a set of string, the third one is the enemy units as a set of string.
+</p>
+
+<p><strong>Output: </strong>The minimum steps as a integer from your unit to the supply depot (or None).</p>
+
+<p>
+<strong>How it is used:</strong><br>
+In war games, Searching for a path is important for movement and supply.
+And the idea of adjacent hexes is often seen as<a href='https://en.wikipedia.org/wiki/Zone_of_control'> Zone of control(ZOC)</a>.
+</p>
+
+<p>
+<strong>Precondition:</strong><br>
+<ul>
+    <li>all(map(lambda x: re.match('[A-L][1-9]$', x), {you} | depots | enemies))</li>
+    <li>you not in depots | enemies</li>
+    <li>len(depots) &gt; 0</li>
+    <li>len(enemies) &ge; 0</li>
+</ul>
+</p>

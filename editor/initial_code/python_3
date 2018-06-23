@@ -1,0 +1,14 @@
+def supply_line(you, depots, enemies):
+
+    # replace this for solution
+    return 0
+
+
+if __name__ == '__main__':
+    assert supply_line("B4", {"F4"}, {"D4"}) == 6, 'simple'
+    assert supply_line("A3", {"A9", "F5", "G8"}, {"B3", "G6"}) == 11, 'multiple'
+    assert supply_line("C2", {"B9", "F6"}, {"B7", "E8", "E5", "H6"}) is None, 'None'
+    assert supply_line("E5", {"C2", "B7", "F8"}, set()) == 4, 'no enemies'
+    assert supply_line("A5", {"A2", "B9"}, {"B3", "B7", "E3", "E7"}) == 13, '2 depots'
+    print('"Run" is good. How is "Check"?')
+
