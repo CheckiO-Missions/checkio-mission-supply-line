@@ -13,7 +13,7 @@ from string import ascii_uppercase
 hexes = set(x + str(i) for x in ascii_uppercase[:12] for i in range(1, 10))
 randoms = []
 
-for _ in range(20):
+for _ in range(10):
     d = [1, 1, 1, 1, 2, 2][randint(0, 5)]
     e = [4, 5, 6, 7, 8, 9][randint(0, 5)]
 
