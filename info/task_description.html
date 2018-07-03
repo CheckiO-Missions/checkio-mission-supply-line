@@ -1,14 +1,14 @@
 <p>
-Many war games have rules on supply lines.
-Units that can not contact the supply source fall into various troubles.
+Many war games have rules concerning the supply lines.
+Units that can’t contact the supply source face a lot of  troubles.
 </p>
 <p>
 You should find the shortest supply line with Python.
 </p>
 
 <p>
-The map used in this mission is a hex grid with a maximum size of 12x9, and each hex is numbered from A1 to L9.
-(A - L is a column, and 1 - 9 is a row.)
+The map used in this mission is a hex grid with a maximum size of 12x9 where each hex is numbered from from A1 to L9.
+(A - L indicate a column, and 1 - 9 indicate a row.)
 </p>
 <div>
     <p style="text-align: left;">
@@ -17,17 +17,17 @@ The map used in this mission is a hex grid with a maximum size of 12x9, and each
 </div>
 
 <p>
-You are given three arguments, the first is the position of your uint (a string), the second is the supply depots (set of string), the third is the enemy units (set of string).
-You should return the minimum steps from your unit to the supply depot.
-If you can not set a supply line at all, return None.
+You are given three arguments: the first is the position of your uint (a string), the second is the supply depots (the set of strings), and the third is the enemy units (the set of strings).
+You should return the minimum number of steps from your unit to the supply depot.
+If you can’t set a supply line at all, return None.
 </p>
-<p>The effect of enemy hex and its adjacent hexes:</p>
+<p>The effect of the enemy hex and its adjacent hexes:</p>
 <ul>
-    <li>You can not pass supply lines these hexes.</li>
+    <li>You can’t lay the supply lines on these hexes.</li>
     <ul>
-        <li>If your unit is adjacent to the enemy, there is no problem with the supply line.</li>
+        <li>If your unit is adjacent to the enemy’s, there is no problem with the supply line.</li>
     </ul>
-    <li>The supply depot in these hexes can not be used .</li>
+    <li>The supply depot on these hexes can’t be used .</li>
 
 </ul>
 
@@ -45,15 +45,15 @@ supply_line('A3', {'A9', 'F5', 'G8'}, {'B3', 'G6'}) == 11</pre>
         <img  title="The map" src="{{MEDIA}}checkio_supply_line_ex_01.png" alt="examples" style="max-height: 250px"/>
     </p>
 </div>
-<p><strong>Input: </strong>Three arguments. The first one is the position of your uint as a string, the second one is the supply depots as a set of string, the third one is the enemy units as a set of string.
+<p><strong>Input: </strong>Three arguments. The first one is the position of your unit as a string, the second one is the supply depots as the set of strings, the third one is the enemy units as the set of strings.
 </p>
 
-<p><strong>Output: </strong>The minimum steps as a integer from your unit to the supply depot (or None).</p>
+<p><strong>Output: </strong>The minimum number of steps from your unit to the supply depot as an integer (or None).</p>
 
 <p>
 <strong>How it is used:</strong><br>
-In war games, Searching for a path is important for movement and supply.
-And the idea of adjacent hexes is often seen as<a href='https://en.wikipedia.org/wiki/Zone_of_control'> Zone of control(ZOC)</a>.
+In war games. Searching for a path is important for movement and getting supplies.
+And the idea of the adjacent hex cells is often seen as a <a href='https://en.wikipedia.org/wiki/Zone_of_control'> Zone of control(ZOC)</a>.
 </p>
 
 <p>
